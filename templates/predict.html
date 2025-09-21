@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Predict House Price</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Predict House Price</h1>
+    </header>
+
+    <form method="POST">
+      <div class="form-group">
+        <label>Transaction Date</label>
+        <input type="date" step="any" name="transaction_date" required>
+      </div>
+
+      <div class="form-group">
+        <label>House Age</label>
+        <input type="number" step="any" name="house_age" required>
+      </div>
+
+      <div class="form-group">
+        <label>Distance to MRT Station (meters)</label>
+        <input type="number" step="any" name="mrt_distance" required>
+      </div>
+
+      <div class="form-group">
+        <label>Number of Convenience Stores</label>
+        <input type="number" step="any" name="convenience_stores" required>
+      </div>
+
+      <div class="form-group">
+        <label>Latitude</label>
+        <input type="number" step="any" name="latitude" required>
+      </div>
+
+      <div class="form-group">
+        <label>Longitude</label>
+        <input type="number" step="any" name="longitude" required>
+      </div>
+
+      <button type="submit">Predict Price</button>
+    </form>
+
+    {% if prediction %}
+    <div class="result">
+      <p><b>Predicted Price:</b> {{ prediction }}</p>
+      <p><b>MSE:</b> {{ mse }}</p>
+      <p><b>R²:</b> {{ r2 }}</p>
+    </div>
+    {% endif %}
+  </div>
+</body>
+
+</html>

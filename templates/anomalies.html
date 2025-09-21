@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Anomalies Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Top Anomalies in Predictions</h1>
+        </header>
+
+        {% if anomalies %}
+        <table>
+            <tr>
+                <th>House Age</th>
+                <th>MRT Distance</th>
+                <th>Convenience Stores</th>
+                <th>Actual Price</th>
+                <th>Predicted Price</th>
+                <th>Error</th>
+            </tr>
+            {% for row in anomalies %}
+            <tr>
+                <td>{{ row.house_age }}</td>
+                <td>{{ row.mrt_distance }}</td>
+                <td>{{ row.convenience_stores }}</td>
+                <td>{{ row.house_price }}</td>
+                <td>{{ row.predicted_price }}</td>
+                <td>{{ row.error }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+
+        <img class="plot-img" src="data:image/png;base64,{{ img_base64 }}">
+    </div>
+
+</body>
+
+</html>
+<div class="container">
+    <header>
+        <h1>Detected Anomalies</h1>
+    </header>
+
+    {% if anomalies %}
+    <table>
+        <tr>
+            {% for col in anomalies[0].keys() %}
+            <th>{{ col }}</th>
+            {% endfor %}
+        </tr>
+        {% for row in anomalies %}
+        <tr>
+            {% for value in row.values() %}
+            <td>{{ value }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+
+    <img class="plot-img" src="data:image/png;base64,{{ img_base64 }}">
+</div>

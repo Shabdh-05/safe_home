@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Root Cause Analysis</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Root Cause Analysis</h1>
+    </header>
+
+    <p><b>Issue:</b> {{ issue_description }}</p>
+
+    <ul>
+      {% for why in root_cause_analysis %}
+        <li>{{ why }}</li>
+      {% endfor %}
+    </ul>
+
+    <p><b>Model Performance:</b></p>
+    <p>MSE: {{ mse }}</p>
+    <p>R²: {{ r2 }}</p>
+  </div>
+</body>
+</html>

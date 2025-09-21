@@ -1,0 +1,140 @@
+/* ---------- Global Styles ---------- */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ---------- Container ---------- */
+.container {
+  max-width: 900px;
+  width: 90%;
+  margin: auto;
+  padding: 30px 20px;
+  text-align: center;
+  backdrop-filter: blur(15px);
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  position: relative;
+}
+
+/* ---------- Remove unwanted default links ---------- */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:visited, a:active, a:focus {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ---------- Header ---------- */
+header img {
+  width: 120px;
+  height: auto;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+header img:hover {
+  transform: rotate(-10deg) scale(1.1);
+}
+
+header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 700;
+}
+
+
+header p {
+  font-size: 1.2rem;
+  color: #e0e0e0;
+  margin-bottom: 30px;
+}
+
+/* ---------- Cards ---------- */
+.card {
+  display: inline-block;
+  margin: 15px;
+  padding: 25px 40px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 20px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 500;
+  transition: all 0.4s ease;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.card:hover {
+  background: rgba(255,255,255,0.25);
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+}
+
+/* ---------- Result/Prediction Box ---------- */
+.result {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(0,0,0,0.5);
+  font-size: 1.2rem;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+/* ---------- Input Fields ---------- */
+input[type="text"], input[type="number"], input[type="date"] {
+  width: 80%;
+  padding: 10px 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, input[type="date"]:focus {
+  box-shadow: 0 0 15px rgba(255,255,255,0.5);
+}
+
+/* ---------- Buttons ---------- */
+button {
+  padding: 12px 25px;
+  margin-top: 15px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #fff;
+  background: #667eea;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #5a67d8;
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+/* ---------- Anomalies Plot ---------- */
+img.plot-img {
+  margin-top: 20px;
+  border-radius: 15px;
+  max-width: 100%;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}

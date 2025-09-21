@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flood Risk Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Flood Risk Detection</h1>
+    </header>
+
+    <form method="POST">
+      {% for col in Xf.columns %}
+        <div class="form-group">
+          <label>{{ col.replace("_", " ") | capitalize }}</label>
+          <input type="number" step="any" name="{{ col }}" required>
+        </div>
+      {% endfor %}
+      <button type="submit">Check Flood Risk</button>
+    </form>
+
+    {% if prediction %}
+      <div class="result">
+        <p><b>Prediction:</b> {{ prediction }}</p>
+        <p><b>Accuracy:</b> {{ accuracy }}</p>
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>

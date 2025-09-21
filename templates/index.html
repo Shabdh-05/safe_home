@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SAFE Home Index</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+      <h1>SAFE Home Index</h1>
+      <p>Real Estate Price Prediction & Flood Risk Management</p>
+    </header>
+
+    <a href="{{ url_for('predict_price') }}" class="card">🏠 Predict House Price</a>
+    <a href="{{ url_for('predict_flood') }}" class="card">🌊 Flood Risk Detection</a>
+    <a href="{{ url_for('detect_anomalies') }}" class="card">⚡ Detect Anomalies</a>
+  </div>
+</body>
+</html>
